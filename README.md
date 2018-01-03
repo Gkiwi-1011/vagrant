@@ -41,9 +41,9 @@
  - Bridge(that can connect from another host to guest using guest's IP.) supports only DHCP.(If you exmamine guest's IP, login the guest OS.)
  - eth0 is used for NAT(that is used for SSH port forward from Host) on Virtualbox and eth1 and eth2 are used for Guest IP.
 
-#s About Box
+## About Box
  - Box file is just tar file (that can be extracted).
 
-# Remaining task
+## Remaining task
  - After getting new mac pc, Build vagrant environment using EC2 on AWS.(refer to P.222 on Vagrant book.)
 
