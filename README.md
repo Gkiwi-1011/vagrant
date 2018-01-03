@@ -24,4 +24,26 @@
 4. `vagrant halt`
  - Output: ** Stop centos7 on Virtual Box. **
 
+## Purpose
+ - Standardization of the development environment.
+ - Shorten the set-up time to develop applications.
+ - Set up network interface to connect with other VMs,
+ - Set up sync folder to share files with host.(The Default sync folder is `Vagrantfile's directory`.)
+
+## About Provisioning
+ - Build system easily.
+ - Have high reproducibility.
+ - Have identity between a development environment and a production environment.
+
+## About Network
+ - Port foward supports TCP.(If you use UDP, add `protocol:"udp"`.)
+ - Static IP is used for only connection from Host to the guest or from the guest to another guest.(If you use static IP, add `config.vm.network "hostonly", "aaa.bbb.ccc.ddd"`.)
+ - Bridge(that can connect from another host to guest using guest's IP.) supports only DHCP.(If you exmamine guest's IP, login the guest OS.)
+ - eth0 is used for NAT(that is used for SSH port forward from Host) on Virtualbox and eth1 and eth2 are used for Guest IP.
+
+#s About Box
+ - Box file is just tar file (that can be extracted).
+
+# Remaining task
+ - After getting new mac pc, Build vagrant environment using EC2 on AWS.(refer to P.222 on Vagrant book.)
 
