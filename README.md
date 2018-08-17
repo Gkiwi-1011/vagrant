@@ -55,3 +55,39 @@
  - Change default boot kernel version.`sudo grub2-set-default`
  - Check changed default boot kernel version.`sudo grub2-editenv list`
  - Update default boot kernel version on grub2.`sudo grub2-mkconfig -o /boot/grub2/gr    ub.cfg`
+
+## Install vim
+1. `sudo yum -y install mercurial ncurses-devel lua lua-devel`
+2. `sudo yum install -y  perl-ExtUtils-Embed`
+3. `sudo yum install -y ruby-devel`
+4. `sudo yum install -y python-devel`
+5. `sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm`
+6. `sudo yum install -y python35u python35u-libs python35u-devel python35u-pip`
+7. `sudo yum install -y gtk2-devel atk-devel libX11-devel libXt-devel`
+8. `git clone https://github.com/vim/vim`
+9. `cd vim`
+10. `./configure \
+ --enable-fail-if-missing \
+ --with-features=huge \
+ --disable-selinux \
+ --enable-luainterp \
+ --enable-perlinterp \
+ --enable-xim \
+ --enable-gui=gtk2 \
+ --enable-pythoninterp=dynamic \
+ --with-python-config-dir=/usr/lib64/python2.7/config \
+ --enable-python3interp=dynamic \
+ --with-python3-config-dir=/usr/lib64/python3.5/config-3.5m \
+ --enable-rubyinterp=dynamic \
+ --with-ruby-command=/usr/bin/ruby \
+ --enable-cscope \
+ --enable-fontset \
+ --enable-multibyte \
+ vi_cv_path_python3=/usr/bin/python3.5`
+
+11. `sudo make`
+12. `sudo make install`
+13. `mkdir -p ~/.vim/bundle`
+14. `git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim`
+15. Copy .vimrc from Host.
+
