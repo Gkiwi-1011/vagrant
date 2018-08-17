@@ -47,3 +47,11 @@
 ## Remaining task
  - After getting new mac pc, Build vagrant environment using EC2 on AWS.(refer to P.222 on Vagrant book.)
 
+## Update Kernel version on guest to set up VM guest additions
+ - Update Kernel.`sudo yum -y install kernel`
+ - Upadte other ones related kernel.`sudo yum install -y kernel-devel kernel-headers     dkms gcc gcc-c++`
+ - Update all ones.`sudo yum update`
+ - Check default boot kernel version.`sudo  awk -F\' '$1=="menuentry " {print i++ " :     " $2}' /boot/grub2/grub.cfg`
+ - Change default boot kernel version.`sudo grub2-set-default`
+ - Check changed default boot kernel version.`sudo grub2-editenv list`
+ - Update default boot kernel version on grub2.`sudo grub2-mkconfig -o /boot/grub2/gr    ub.cfg`
